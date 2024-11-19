@@ -40,20 +40,7 @@ export const restaurants = [
   {
     id: "bb8afbec-2fec-491f-93e9-7f13950dd80b",
     name: "Homeslice",
-    menu: [
-      {
-        id: "25402233-0095-49ea-9939-1e67ed89ffb9",
-        name: "Margarita",
-        price: 9,
-        ingredients: ["bread", "cheese", "tomatoes"],
-      },
-      {
-        id: "90902233-0095-49ea-9939-1e67ed89ffb9",
-        name: "Chef pizza",
-        price: 10,
-        ingredients: ["bread", "cheese", "tomatoes", "chicken"],
-      },
-    ],
+    menu: [],
     reviews: [
       {
         id: "53b642d7-5e86-4717-a466-0640a1dee076",
@@ -98,14 +85,7 @@ export const restaurants = [
         ingredients: ["bread"],
       },
     ],
-    reviews: [
-      {
-        id: "53b642d7-5e86-4717-a466-0640a1dee076",
-        user: "Agata",
-        text: "Best bakery",
-        rating: 5,
-      },
-    ],
+    reviews: [],
   },
   {
     id: "d9241927-09e1-44f3-8986-a76346869037",
