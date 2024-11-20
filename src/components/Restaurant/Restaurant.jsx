@@ -1,4 +1,5 @@
 import { Dish } from "../Dish/Dish";
+import { ReviewForm } from "../ReviewForm/ReviewForm";
 
 export function Restaurant({ restaurant: { name, menu, reviews } }) {
   return (
@@ -23,6 +24,7 @@ export function Restaurant({ restaurant: { name, menu, reviews } }) {
           ))}
         </ul>
       )) || <div>Отзывов пока нет</div>}
+      <ReviewForm />
     </div>
   );
 }
