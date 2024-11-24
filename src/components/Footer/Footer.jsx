@@ -1,3 +1,5 @@
+import styles from "./Footer.module.scss";
+
 export function Footer() {
-  return <footer>Контактная информация</footer>;
+  return <footer className={styles.footer}>Контактная информация</footer>;
 }

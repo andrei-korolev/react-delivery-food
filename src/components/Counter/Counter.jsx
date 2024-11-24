@@ -1,13 +1,16 @@
+import { Button } from "../UI/Button/Button";
+import styles from "./Counter.module.scss";
+
 export function Counter({ value, onIncrease, onDecrease }) {
   return (
-    <div>
-      <button type="button" onClick={onIncrease}>
+    <div className={styles.counter}>
+      <Button size="small" mode="secondary" onClick={onIncrease}>
         +
-      </button>
+      </Button>
       {value}
-      <button type="button" onClick={onDecrease}>
+      <Button size="small" mode="secondary" onClick={onDecrease}>
         -
-      </button>
+      </Button>
     </div>
   );
 }
