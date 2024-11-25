@@ -1,6 +1,7 @@
 import { Counter } from "../Counter/Counter";
 import { useForm } from "./hooks/useForm";
 import { Button } from "../UI/Button/Button";
+import { Text } from "../UI/Text/Text";
 import styles from "./ReviewForm.module.scss";
 
 export function ReviewForm() {
@@ -16,7 +17,7 @@ export function ReviewForm() {
     <form>
       <div className={styles.fields}>
         <label className={styles.label}>
-          <span>name:</span>
+          <Text>name:</Text>
           <input
             type="text"
             value={name}
@@ -28,7 +29,7 @@ export function ReviewForm() {
         </label>
 
         <label className={styles.label}>
-          <span>text:</span>
+          <Text>text:</Text>
           <input
             type="text"
             value={text}
@@ -38,7 +39,7 @@ export function ReviewForm() {
       </div>
 
       <div className={styles.rating}>
-        <span>rating:</span>
+        <Text>rating:</Text>
         <Counter
           value={rating}
           onIncrease={() => setRating(rating + 1)}
