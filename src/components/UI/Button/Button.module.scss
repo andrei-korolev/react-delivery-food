@@ -4,11 +4,21 @@
   &._primary {
     border: 1px solid blue;
     color: blue;
+
+    &._dark {
+      color: red;
+      border-color: red;
+    }
   }
 
   &._secondary {
     color: green;
     border-color: green;
+
+    &._dark {
+      color: yellow;
+      border-color: yellow;
+    }
   }
 
   &._large {

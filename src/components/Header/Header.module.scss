@@ -1,7 +1,13 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 300px;
   background: linear-gradient(to top, #fefcea, #f1da36);
+}
+
+.user {
+  display: flex;
+  gap: 10px;
+  border: 1px solid green;
 }
