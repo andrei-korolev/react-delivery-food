@@ -1,11 +1,12 @@
 import { Dish } from "../Dish/Dish";
 import { ReviewForm } from "../ReviewForm/ReviewForm";
+import { Text } from "../UI/Text/Text";
 
 export function Restaurant({ restaurant: { name, menu, reviews } }) {
   return (
     <div>
-      <h2>{name}</h2>
-      <h3>Меню</h3>
+      <Text type={2}>{name}</Text>
+      <Text type={3}>Меню</Text>
       {(menu.length && (
         <ul>
           {menu.map((menu) => (
@@ -14,16 +15,16 @@ export function Restaurant({ restaurant: { name, menu, reviews } }) {
             </li>
           ))}
         </ul>
-      )) || <div>Информация об актуальном меню сейчас отсутствует</div>}
+      )) || <Text>Информация об актуальном меню сейчас отсутствует</Text>}
 
-      <h3>Отзывы</h3>
+      <Text type={3}>Отзывы</Text>
       {(reviews.length && (
         <ul>
           {reviews.map((review) => (
             <li key={review.text}>{review.text}</li>
           ))}
         </ul>
-      )) || <div>Отзывов пока нет</div>}
+      )) || <Text>Отзывов пока нет</Text>}
       <ReviewForm />
     </div>
   );

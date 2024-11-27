@@ -1,0 +1,21 @@
+.button {
+  background-color: white;
+
+  &._primary {
+    border: 1px solid blue;
+    color: blue;
+  }
+
+  &._secondary {
+    color: green;
+    border-color: green;
+  }
+
+  &._large {
+    padding: 10px;
+  }
+
+  &._small {
+    padding: 5px;
+  }
+}

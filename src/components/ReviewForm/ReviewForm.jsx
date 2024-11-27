@@ -1,5 +1,8 @@
 import { Counter } from "../Counter/Counter";
 import { useForm } from "./hooks/useForm";
+import { Button } from "../UI/Button/Button";
+import { Text } from "../UI/Text/Text";
+import styles from "./ReviewForm.module.scss";
 
 export function ReviewForm() {
   const {
@@ -12,29 +15,31 @@ export function ReviewForm() {
 
   return (
     <form>
-      <label>
-        name:
-        <input
-          type="text"
-          value={name}
-          onChange={({ target: { value } }) => {
-            console.log(value, "=value");
-            setName(value);
-          }}
-        />
-      </label>
+      <div className={styles.fields}>
+        <label className={styles.label}>
+          <Text>name:</Text>
+          <input
+            type="text"
+            value={name}
+            onChange={({ target: { value } }) => {
+              console.log(value, "=value");
+              setName(value);
+            }}
+          />
+        </label>
 
-      <label>
-        text:
-        <input
-          type="text"
-          value={text}
-          onChange={({ target: { value } }) => setText(value)}
-        />
-      </label>
+        <label className={styles.label}>
+          <Text>text:</Text>
+          <input
+            type="text"
+            value={text}
+            onChange={({ target: { value } }) => setText(value)}
+          />
+        </label>
+      </div>
 
-      <div>
-        rating:
+      <div className={styles.rating}>
+        <Text>rating:</Text>
         <Counter
           value={rating}
           onIncrease={() => setRating(rating + 1)}
@@ -42,9 +47,7 @@ export function ReviewForm() {
         ></Counter>
       </div>
 
-      <button type="button" onClick={clear}>
-        Clear
-      </button>
+      <Button onClick={clear}>Clear</Button>
     </form>
   );
 }
