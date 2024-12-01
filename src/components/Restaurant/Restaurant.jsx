@@ -1,8 +1,12 @@
+import { useContext } from "react";
+import { UserContext } from "../../contexts/user-context";
 import { Dish } from "../Dish/Dish";
 import { ReviewForm } from "../ReviewForm/ReviewForm";
 import { Text } from "../UI/Text/Text";
 
 export function Restaurant({ restaurant: { name, menu, reviews } }) {
+  const { user } = useContext(UserContext);
+
   return (
     <div>
       <Text type={2}>{name}</Text>
@@ -25,7 +29,8 @@ export function Restaurant({ restaurant: { name, menu, reviews } }) {
           ))}
         </ul>
       )) || <Text>Отзывов пока нет</Text>}
-      <ReviewForm />
+
+      {user && <ReviewForm />}
     </div>
   );
 }
