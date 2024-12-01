@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { UserContext } from "../../contexts/user-context";
 import styles from "./User.module.scss";
 import { Button } from "../UI/Button/Button";
-import { USER } from "../../data/user";
+import { USER_LIST } from "../../data/user";
 
 export function User() {
   const { user, setUser } = useContext(UserContext);
@@ -14,7 +14,7 @@ export function User() {
           <div>{user.name}</div>
           <Button onClick={() => setUser(null)}>Выйти</Button>
         </>
-      )) || <Button onClick={() => setUser(USER)}>Войти</Button>}
+      )) || <Button onClick={() => setUser(USER_LIST[0])}>Войти</Button>}
     </div>
   );
 }
