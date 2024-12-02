@@ -1,26 +1,29 @@
 import { useState } from "react";
-import { restaurants } from "../../data/mock";
-import { Restaurant } from "../Restaurant/Restaurant";
-import { Button } from "../UI/Button/Button";
 import styles from "./Restaurants.module.scss";
+import { useSelector } from "react-redux";
+import { selectRestaurantsIds } from "../../redux/entities/restaurants-slice";
+import { RestaurantContainer } from "../Restaurant/Restaurant-container";
+import { RestaurantTabContainer } from "./components/Restaurant-tab-container/Restaurant-tab-container";
 
 export function Restaurants() {
-  const [activeRestaurant, setActiveRestaurant] = useState(restaurants[0]);
+  const restaurantsIds = useSelector(selectRestaurantsIds);
+
+  const [activeRestaurantId, setActiveRestaurantId] = useState(
+    restaurantsIds[0]
+  );
 
   return (
     <div>
       <div className={styles.wrapper}>
-        {restaurants.map((restaurant, index) => (
-          <Button
-            key={restaurant.id}
-            size="large"
-            onClick={() => setActiveRestaurant(restaurants[index])}
-          >
-            {restaurant.name}
-          </Button>
+        {restaurantsIds.map((id) => (
+          <RestaurantTabContainer
+            key={id}
+            id={id}
+            onClick={() => setActiveRestaurantId(id)}
+          />
         ))}
       </div>
-      {activeRestaurant && <Restaurant restaurant={activeRestaurant} />}
+      {activeRestaurantId && <RestaurantContainer id={activeRestaurantId} />}
     </div>
   );
 }

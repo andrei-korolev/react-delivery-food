@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { UserContext } from "../../contexts/user-context";
-import { Dish } from "../Dish/Dish";
 import { ReviewForm } from "../ReviewForm/ReviewForm";
 import { Text } from "../UI/Text/Text";
+import { DishContainer } from "../Dish/Dish-container";
+import { ReviewContainer } from "../Review/Review-container";
 
 export function Restaurant({ restaurant: { name, menu, reviews } }) {
   const { user } = useContext(UserContext);
@@ -13,9 +14,9 @@ export function Restaurant({ restaurant: { name, menu, reviews } }) {
       <Text type={3}>Меню</Text>
       {(menu.length && (
         <ul>
-          {menu.map((menu) => (
-            <li key={menu.name}>
-              <Dish name={menu.name} />
+          {menu.map((id) => (
+            <li key={id}>
+              <DishContainer id={id} />
             </li>
           ))}
         </ul>
@@ -24,8 +25,10 @@ export function Restaurant({ restaurant: { name, menu, reviews } }) {
       <Text type={3}>Отзывы</Text>
       {(reviews.length && (
         <ul>
-          {reviews.map((review) => (
-            <li key={review.text}>{review.text}</li>
+          {reviews.map((id) => (
+            <li key={id}>
+              <ReviewContainer id={id} />
+            </li>
           ))}
         </ul>
       )) || <Text>Отзывов пока нет</Text>}
