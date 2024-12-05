@@ -1,0 +1,9 @@
+.link {
+  padding: 5px 10px;
+  border: 1px solid red;
+}
+
+.active {
+  pointer-events: none;
+  color: gray;
+}

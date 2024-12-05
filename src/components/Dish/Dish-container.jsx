@@ -9,5 +9,5 @@ export function DishContainer({ id }) {
     return null;
   }
 
-  return <Dish name={dish.name} />;
+  return <Dish name={dish.name} id={dish.id} />;
 }
