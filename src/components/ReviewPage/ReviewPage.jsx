@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectRestaurantById } from "../../redux/entities/restaurants-slice";
+import { selectRestaurantById } from "../../redux/entities/restaurants/restaurants-slice";
 import { ReviewContainer } from "../Review/Review-container";
 import { Text } from "../UI/Text/Text";
 import { useParams } from "react-router-dom";

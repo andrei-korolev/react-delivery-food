@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectDishById } from "../../redux/entities/dishes-slice";
+import { selectDishById } from "../../redux/entities/dishes/dishes-slice";
 import { Dish } from "./Dish";
 
 export function DishContainer({ id }) {

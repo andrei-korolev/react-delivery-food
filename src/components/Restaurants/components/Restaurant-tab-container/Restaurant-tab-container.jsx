@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectRestaurantById } from "../../../../redux/entities/restaurants-slice";
+import { selectRestaurantById } from "../../../../redux/entities/restaurants/restaurants-slice";
 import { Link } from "../../../UI/Link/Link";
 
 export function RestaurantTabContainer({ id }) {
