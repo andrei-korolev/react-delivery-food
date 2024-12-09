@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import { selectDishes } from "../../redux/entities/dishes-slice";
 import { useSelector } from "react-redux";
 import { Link } from "../UI/Link/Link";
+import { selectDishes } from "../../redux/entities/dishes/dishes-slice";
 
 export function DishesPage() {
   const list = useSelector(selectDishes);

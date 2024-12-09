@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Text } from "../../UI/Text/Text";
 import { Counter } from "../../Counter/Counter";
-import { selectDishById } from "../../../redux/entities/dishes-slice";
+import { selectDishById } from "../../../redux/entities/dishes/dishes-slice";
 import { selectAmountById } from "../../../redux/ui/cart-slice";
 
 export function CartItem({ id }) {
