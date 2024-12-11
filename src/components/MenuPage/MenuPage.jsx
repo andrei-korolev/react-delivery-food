@@ -1,36 +1,30 @@
 import { useParams } from "react-router-dom";
 import { Text } from "../UI/Text/Text";
-import { selectRestaurantById } from "../../redux/entities/restaurants/restaurants-slice";
-import { useSelector } from "react-redux";
-import { DishContainer } from "../Dish/Dish-container";
-import { useRequest } from "../../redux/hooks/use-request";
-import { PENDING, REJECTED } from "../../shared/configs/request-status";
 import { Loader } from "../UI/Loader/Loader";
 import { Error } from "../UI/Error/Error";
-import { getDishesByIdRestaurant } from "../../redux/entities/dishes/get-dishes-by-id-restaurant";
+import { useGetDishesByIdRestaurantQuery } from "../../redux/services/api";
+import { Dish } from "../Dish/Dish";
 
 export function MenuPage() {
   const { id } = useParams();
-  const { menu } = useSelector((state) => selectRestaurantById(state, id));
+  const { data, isLoading, isError } = useGetDishesByIdRestaurantQuery(id);
 
-  const requestStatus = useRequest(getDishesByIdRestaurant, id);
-
-  if (requestStatus === PENDING) {
+  if (isLoading) {
     return <Loader />;
   }
 
-  if (requestStatus === REJECTED) {
+  if (isError) {
     return <Error />;
   }
 
   return (
     <div>
       <Text type={3}>Меню</Text>
-      {(menu.length && (
+      {(data.length && (
         <ul>
-          {menu.map((id) => (
+          {data.map(({ id, name }) => (
             <li key={id}>
-              <DishContainer id={id} />
+              <Dish name={name} id={id} />;
             </li>
           ))}
         </ul>

@@ -4,7 +4,7 @@ import { Button } from "../UI/Button/Button";
 import { Text } from "../UI/Text/Text";
 import styles from "./ReviewForm.module.scss";
 
-export function ReviewForm() {
+export function ReviewForm({ onSubmit }) {
   const {
     form: { name, text, rating },
     clear,
@@ -22,7 +22,6 @@ export function ReviewForm() {
             type="text"
             value={name}
             onChange={({ target: { value } }) => {
-              console.log(value, "=value");
               setName(value);
             }}
           />
@@ -48,6 +47,7 @@ export function ReviewForm() {
       </div>
 
       <Button onClick={clear}>Clear</Button>
+      <Button onClick={() => onSubmit({ text, rating })}>Submit</Button>
     </form>
   );
 }
