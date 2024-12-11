@@ -9,7 +9,7 @@ export const apiSlice = createApi({
     getUsers: builder.query({ query: () => "/users" }),
     getReviewsByRestrantId: builder.query({
       query: (id) => `/reviews?restaurantId=${id}`,
-      providesTags: (id) => [{ type: "Reviews", id }],
+      providesTags: () => [{ type: "Reviews" }],
     }),
     getDishById: builder.query({ query: (id) => `/dish/${id}` }),
     getDishesByIdRestaurant: builder.query({
@@ -21,7 +21,7 @@ export const apiSlice = createApi({
         method: "POST",
         body,
       }),
-      invalidatesTags: ({ id }) => [{ type: "Reviews", id }],
+      invalidatesTags: () => [{ type: "Reviews" }],
     }),
   }),
 });
